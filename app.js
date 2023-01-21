@@ -157,7 +157,7 @@ function findPersonFamily (person, people) {
     let newArray = [];
     let siblings = findPersonSiblings(person[0], people);
     let children = findPersonDescendants(person[0], people);
-    
+    let currentSpouse = findPersonCurrentSpouse(person[0], people);
 }
 
 /**
