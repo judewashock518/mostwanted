@@ -297,6 +297,17 @@ function searchByDob(people){
     return newArray;
 }
 
+function searchByOccupation(people){
+    let userInputOccupation = prompt("What is the person's occupation?").toLowerCase();
+    let newArray = people.filter(function (el) {
+      if(el.occupation == userInputOccupation) {
+        return true;
+      }
+    });
+  
+    return newArray;
+}
+
 
 /**
  * This function's purpose is twofold:
