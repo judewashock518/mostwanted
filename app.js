@@ -229,6 +229,18 @@ function searchByTraits(people) {
          searchByTraits(people);
          break;
      }
+     userSearchChoice = prompt("Would you like to filter the list further by another trait?");
+     if(userSearchChoice === "yes"){
+       searchByTraits(filteredPeople, people);
+     }
+     if (userSearchChoice === "no" && filteredPeople.length === 1) {
+        foundPerson = filteredPeople[0];
+       mainMenu(foundPerson, people);
+     }
+     if (userSearchChoice === "no" && filteredPeople.length > 1) {
+        alert("We have narrowed it down to this group: \n\n"  + displayPeople(filteredPeople) +"\n\n We'll send you back to the start now to search any of these people by name.");
+        app(people);
+     }
    }
 
 /**
