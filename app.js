@@ -196,7 +196,7 @@ function findPersonDescendants(person, people) {
 }
 
 function searchByTraits(people) {
-    let userSearchChoice = prompt("What would you like to search by? 'height', 'weight', 'eye color', 'gender', 'age', 'occupation'.").toLowerCase();
+    let userSearchChoice = prompt("What would you like to search by? 'height', 'weight', 'eye color', 'gender', 'dob', 'occupation'.").toLowerCase();
     let filteredPeople;
     let foundPerson;
     switch(userSearchChoice) {
@@ -216,8 +216,8 @@ function searchByTraits(people) {
           filteredPeople = searchByGender(people);
           alert(displayPeople(filteredPeople));
           break;
-        case "age":
-          filteredPeople = searchByAge(people);
+        case "dob":
+          filteredPeople = searchByDob(people);
           alert(displayPeople(filteredPeople));
           break;
         case "occupation":
@@ -252,6 +252,48 @@ function searchByHeight(people){
       }
     });
 
+    return newArray;
+}
+
+function searchByWeight(people) {
+    let userInputWeight = prompt("How much does the person weigh?");
+    let newArray = people.filter(function (el) {
+      if(el.weight == userInputWeight) {
+        return true;
+      }
+    });
+  
+    return newArray;
+}
+
+function searchByEyeColor(people){
+    let userInputEyeColor = prompt("What is the person's eye color?");
+    let newArray = people.filter(function (el) {
+      if(el.eyeColor == userInputEyeColor) {
+        return true;
+      }
+    });
+    return newArray;
+}
+
+function searchByGender(people){
+    let userInputGender = prompt("What is the person's gender?");
+    let newArray = people.filter(function (el) {
+      if(el.gender == userInputGender) {
+        return true;
+      }
+    });
+    return newArray;
+}
+
+function searchByDob(people){
+    let userInputDob = prompt("What is the person's dob?");
+    let newArray = people.filter(function (el) {
+      if(el.dob == userInputDob) {
+        return true;
+      }
+    });
+  
     return newArray;
 }
 
