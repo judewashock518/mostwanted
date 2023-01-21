@@ -228,7 +228,7 @@ function searchByTraits(people) {
          alert("You entered an invalid search type! Please try again.");
          searchByTraits(people);
          break;
-     }
+    }
      userSearchChoice = prompt("Would you like to filter the list further by another trait?");
      if(userSearchChoice === "yes"){
        searchByTraits(filteredPeople, people);
@@ -241,7 +241,20 @@ function searchByTraits(people) {
         alert("We have narrowed it down to this group: \n\n"  + displayPeople(filteredPeople) +"\n\n We'll send you back to the start now to search any of these people by name.");
         app(people);
      }
-   }
+}
+
+
+function searchByHeight(people){
+    let userInputHeight = prompt("What is the person's height?");
+    let newArray = people.filter(function (el) {
+      if(el.height == userInputHeight) {
+        return true;
+      }
+    });
+
+    return newArray;
+}
+
 
 /**
  * This function's purpose is twofold:
