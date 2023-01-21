@@ -153,9 +153,11 @@ function displayPerson(person) {
 }
 // End of displayPerson()
 
-function findFamily (person, people) {
+function findPersonFamily (person, people) {
     let newArray = [];
-    let siblings = findSiblings(person[0], people);
+    let siblings = findPersonSiblings(person[0], people);
+    let children = findPersonDescendants(person[0], people);
+    
 }
 
 /**
