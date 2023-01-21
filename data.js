@@ -18,7 +18,7 @@ const data = [
 		"eyeColor": "brown",
 		"occupation": "programmer",
 		"parents": [],
-		"siblings": ["Brother 1", "Brother 2", "Sister 1"],
+		"siblings": [],
 		"currentSpouse": 401222887
 	},
 	{
@@ -32,7 +32,7 @@ const data = [
 		"eyeColor": "brown",
 		"occupation": "assistant",
 		"parents": [],
-		"siblings": ["Brother 3", "Brother 4", "Sister 2"],
+		"siblings": [],
 		"currentSpouse": 272822514
 	},
 	{
@@ -46,7 +46,7 @@ const data = [
 		"eyeColor": "brown",
 		"occupation": "landscaper",
 		"parents": [],
-		"siblings": ["Brother 5"],
+		"siblings": [],
 		"currentSpouse": 260451248
 	},
 	{
@@ -60,7 +60,7 @@ const data = [
 		"eyeColor": "brown",
 		"occupation": "assistant",
 		"parents": [],
-		"siblings": ["Brother 6"],
+		"siblings": [],
 		"currentSpouse": 409574486
 	},
 	{
@@ -74,7 +74,7 @@ const data = [
 		"eyeColor": "black",
 		"occupation": "nurse",
 		"parents": [],
-		"siblings": ["Sister 3"],
+		"siblings": [],
 		"currentSpouse": 464142841
 	},
 	{
@@ -88,7 +88,7 @@ const data = [
 		"eyeColor": "black",
 		"occupation": "student",
 		"parents": [],
-		"siblings": ["Sister 4"],
+		"siblings": [],
 		"currentSpouse": 629807187
 	},
 	{
@@ -102,7 +102,7 @@ const data = [
 		"eyeColor": "hazel",
 		"occupation": "architect",
 		"parents": [],
-		"siblings": ["Brother 7"],
+		"siblings": [],
 		"currentSpouse": 595767575
 	},
 	{
@@ -116,7 +116,7 @@ const data = [
 		"eyeColor": "blue",
 		"occupation": "architect",
 		"parents": [],
-		"siblings": ["Brother 8"],
+		"siblings": [],
 		"currentSpouse": 982411429
 	},
 	{
@@ -130,7 +130,7 @@ const data = [
 		"eyeColor": "hazel",
 		"occupation": "doctor",
 		"parents": [],
-		"siblings": ["Brother 9"],
+		"siblings": [],
 		"currentSpouse": null
 	},
 	{
@@ -144,7 +144,7 @@ const data = [
 		"eyeColor": "black",
 		"occupation": "landscaper",
 		"parents": [],
-		"siblings": ["Sister 5"],
+		"siblings": [],
 		"currentSpouse": null
 	},
 	{
