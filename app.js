@@ -187,6 +187,13 @@ function findPersonFamily (person, people) {
       return newArray;
 }
 
+function findPersonDescendants(person, people) {
+    let descendants = findChildren(person, people);
+    for(let i = 0; i < descendants.length; i++) {
+      descendants = descendants.concat(findPersonDescendants(descendants[i], people));
+    }
+    return descendants;
+  }
 
 
 /**
