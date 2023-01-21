@@ -158,6 +158,33 @@ function findPersonFamily (person, people) {
     let siblings = findPersonSiblings(person[0], people);
     let children = findPersonDescendants(person[0], people);
     let currentSpouse = findPersonCurrentSpouse(person[0], people);
+    let parents = findPersonParents(person[0], people);
+
+    if (siblings != null) {
+        for(let i = 0; i < siblings.length; i ++){
+          newArray.push(siblings[i]);
+        }
+      }
+    
+      if (children != null) {
+        for(let i = 0; i < children.length; i ++){
+          newArray.push(children[i]);
+          }
+        }
+    
+      if (currentSpouse != null) {
+        for(let i = 0; i < currentSpouse.length; i ++){
+        newArray.push(currentSpouse[i]);
+        }
+      }
+    
+      if (parents != null) {
+        for(let i = 0; i < parents.length; i ++) {
+          newArray.push(parents[i]);
+        }
+      }
+    
+      return newArray;
 }
 
 /**
