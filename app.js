@@ -153,6 +153,11 @@ function displayPerson(person) {
 }
 // End of displayPerson()
 
+function findFamily (person, people) {
+    let newArray = [];
+    let siblings = findSiblings(person[0], people);
+}
+
 /**
  * This function's purpose is twofold:
  * First, to generate a prompt with the value passed in to the question parameter.
