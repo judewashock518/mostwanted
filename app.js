@@ -199,6 +199,36 @@ function searchByTraits(people) {
     let userSearchChoice = prompt("What would you like to search by? 'height', 'weight', 'eye color', 'gender', 'age', 'occupation'.").toLowerCase();
     let filteredPeople;
     let foundPerson;
+    switch(userSearchChoice) {
+        case "height":
+          filteredPeople = searchByHeight(people);
+          alert(displayPeople(filteredPeople));
+          break;
+        case "weight":
+          filteredPeople = searchByWeight(people);
+          alert(displayPeople(filteredPeople));
+          break;
+        case "eye color":
+          filteredPeople = searchByEyeColor(people);
+          alert(displayPeople(filteredPeople));
+          break;
+        case "gender":
+          filteredPeople = searchByGender(people);
+          alert(displayPeople(filteredPeople));
+          break;
+        case "age":
+          filteredPeople = searchByAge(people);
+          alert(displayPeople(filteredPeople));
+          break;
+        case "occupation":
+          filteredPeople = searchByOccupation(people);
+          alert(displayPeople(filteredPeople));
+          break;
+        default:
+         alert("You entered an invalid search type! Please try again.");
+         searchByTraits(people);
+         break;
+     }
    }
 
 /**
