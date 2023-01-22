@@ -19,7 +19,7 @@ const data = [
 		"occupation": "programmer",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 401222887
 	},
 	{
@@ -34,7 +34,7 @@ const data = [
 		"occupation": "assistant",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 272822514
 	},
 	{
@@ -49,7 +49,7 @@ const data = [
 		"occupation": "landscaper",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 260451248
 	},
 	{
@@ -64,7 +64,7 @@ const data = [
 		"occupation": "assistant",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 409574486
 	},
 	{
@@ -79,7 +79,7 @@ const data = [
 		"occupation": "nurse",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 464142841
 	},
 	{
@@ -94,7 +94,7 @@ const data = [
 		"occupation": "student",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 629807187
 	},
 	{
@@ -109,7 +109,7 @@ const data = [
 		"occupation": "architect",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 595767575
 	},
 	{
@@ -124,7 +124,7 @@ const data = [
 		"occupation": "architect",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 982411429
 	},
 	{
@@ -139,7 +139,7 @@ const data = [
 		"occupation": "doctor",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	},
 	{
@@ -154,7 +154,7 @@ const data = [
 		"occupation": "landscaper",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	},
 	{
@@ -169,7 +169,7 @@ const data = [
 		"occupation": "programmer",
 		"parents": [401222887],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 294874671
 	},
 	{
@@ -184,7 +184,7 @@ const data = [
 		"occupation": "nurse",
 		"parents": [401222887],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 159819275
 	},
 	{
@@ -199,7 +199,7 @@ const data = [
 		"occupation": "assistant",
 		"parents": [409574486, 260451248],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 951747547
 	},
 	{
@@ -214,7 +214,7 @@ const data = [
 		"occupation": "landscaper",
 		"parents": [629807187, 464142841],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	},
 	{
@@ -229,7 +229,7 @@ const data = [
 		"occupation": "doctor",
 		"parents": [629807187, 464142841],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 878013758
 	},
 	{
@@ -244,7 +244,7 @@ const data = [
 		"occupation": "landscaper",
 		"parents": [629807187, 464142841],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	},
 	{
@@ -259,7 +259,7 @@ const data = [
 		"occupation": "nurse",
 		"parents": [693243224, 888201200],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	},
 	{
@@ -274,7 +274,7 @@ const data = [
 		"occupation": "politician",
 		"parents": [693243224, 888201200],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	},
 	{
@@ -289,7 +289,7 @@ const data = [
 		"occupation": "assistant",
 		"parents": [693243224, 888201200],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	},
 	{
@@ -304,7 +304,7 @@ const data = [
 		"occupation": "assistant",
 		"parents": [693243224, 888201200],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 313997561
 	},
 	{
@@ -319,7 +319,7 @@ const data = [
 		"occupation": "doctor",
 		"parents": [],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": 313207561
 	},
 	{
@@ -334,7 +334,7 @@ const data = [
 		"occupation": "doctor",
 		"parents": [313207561, 313997561],
 		"siblings": [],
-		"children": [],
+		"descendants": [],
 		"currentSpouse": null
 	}
 ];

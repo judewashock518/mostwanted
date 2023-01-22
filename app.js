@@ -78,7 +78,7 @@ function mainMenu(person, people) {
         case "descendants":
             //! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
             // HINT: Review recursion lecture + demo for bonus user story
-            let personDescendants = findDescendants(person[0], people);
+            let personDescendants = findPersonDescendants(person[0], people);
             alert(personDescendants);
             break;
         case "restart":
@@ -153,84 +153,19 @@ function displayPerson(person) {
 }
 // End of displayPerson()
 
-function findPersonFamily (person, people) {
-    let newArray = [];
-    let siblings = findSiblings(person, people);
-    let children = findDescendants(person, people);
-    let currentSpouse = findCurrentSpouse(person, people);
-    let parents = findParents(person, people);
-
-    if (siblings != null) {
-        for(let i = 0; i < siblings.length; i ++){
-          newArray.push(siblings[i]);
-        }
-      }
+function findPersonFamily (person) {
+    let personFamily = `Parents: ${person.parents}\n`;
+    personFamily += `Siblings: ${person.siblings}\n`;
+    personFamily += `Descendants: ${person.descendants}\n`;
+    personFamily += `Current Spouse: ${person.currentSpouse}\n`;
+    alert(personFamily);
     
-      if (children != null) {
-        for(let i = 0; i < children.length; i ++){
-          newArray.push(children[i]);
-          }
-        }
-    
-      if (currentSpouse != null) {
-        for(let i = 0; i < currentSpouse.length; i ++){
-        newArray.push(currentSpouse[i]);
-        }
-      }
-    
-      if (parents != null) {
-        for(let i = 0; i < parents.length; i ++) {
-          newArray.push(parents[i]);
-        }
-      }
-    
-      return newArray;
 }
 
-function findDescendants(person, people) {
-    let descendants = findChildren(person, people);
-    for(let i = 0; i < descendants.length; i++) {
-      descendants = descendants.concat(findDescendants(descendants[i], people));
-    }
-    return descendants;
+function findPersonDescendants(person) {
+    let personDescendants = `Descendants: ${person.descendants}\n`;
+    alert(personDescendants);
 }
-
-function findSiblings(person, people) {
-    let newArray = people.filter(function (el) {
-      for (let i = 0; i < (el.siblings).length; i++) {
-        if(person == el) {
-          return false;
-        };
-        if(person.siblings.includes(el.siblings[i]) ) {
-          return true;
-      };
-    };
-    });
-    return newArray[0];
-}
-
-function findParents(person, people) {
-    let newArray = people.filter(function(el) {
-        if((person.parents).includes(el.id)) {
-          return true;
-        }
-    });
-    return newArray;
-}
-
-function findCurrentSpouse(person, people) {
-    let newArray = people.filter(function(el) {
-      if (el.currentSpouse == person.id) {
-        return true;
-      }
-    });
-    return newArray;
-}
-
-
-
-
-
 
 function searchByTraits(people) {
     let userSearchChoice = prompt("What would you like to search by? 'height', 'weight', 'eye color', 'gender', 'dob', 'occupation'.").toLowerCase();
@@ -275,7 +210,7 @@ function searchByTraits(people) {
        mainMenu(foundPerson, people);
      }
      if (userSearchChoice === "no" && filteredPeople.length > 1) {
-        alert("We have narrowed it down to this group: \n\n"  + displayPeople(filteredPeople) +"\n\n We'll send you back to the start now to search any of these people by name.");
+        alert(displayPeople(filteredPeople) + "\n\n We'll send you back to the start now to search any of these people by name.");
         app(people);
      }
 }
