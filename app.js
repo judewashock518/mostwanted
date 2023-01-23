@@ -222,6 +222,11 @@ function searchByHeight(people){
       if(el.height == userInputHeight) {
         return true;
       }
+      if (el.height != userInputHeight) {
+        alert("The height you entered could not be found.");
+        // Restarts app() from the very beginning
+        return app(people);
+      }
     });
 
     return newArray;
@@ -232,6 +237,11 @@ function searchByWeight(people) {
     let newArray = people.filter(function (el) {
       if(el.weight == userInputWeight) {
         return true;
+      }
+      if (el.weight != userInputWeight) {
+        alert("The weight you entered could not be found.");
+        // Restarts app() from the very beginning
+        return app(people);
       }
     });
   
@@ -244,6 +254,12 @@ function searchByEyeColor(people){
       if(el.eyeColor == userInputEyeColor) {
         return true;
       }
+      if (el.eyeColor != userInputEyeColor) {
+        alert("The eye color you entered could not be found.");
+        // Restarts app() from the very beginning
+        return app(people);
+      }
+
     });
     return newArray;
 }
@@ -253,6 +269,11 @@ function searchByGender(people){
     let newArray = people.filter(function (el) {
       if(el.gender == userInputGender) {
         return true;
+      }
+      if (el.gender != userInputGender) {
+        alert("The gender you entered could not be found.");
+        // Restarts app() from the very beginning
+        return app(people);
       }
     });
     return newArray;
@@ -264,6 +285,11 @@ function searchByDob(people){
       if(el.dob == userInputDob) {
         return true;
       }
+      if (el.dob != userInputDob) {
+        alert("The dob you entered could not be found.");
+        // Restarts app() from the very beginning
+        return app(people);
+      }
     });
   
     return newArray;
@@ -274,6 +300,11 @@ function searchByOccupation(people){
     let newArray = people.filter(function (el) {
       if(el.occupation == userInputOccupation) {
         return true;
+      }
+      if (el.occupation != userInputOccupation) {
+        alert("The occupation you entered could not be found.");
+        // Restarts app() from the very beginning
+        return app(people);
       }
     });
   
