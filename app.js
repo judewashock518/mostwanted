@@ -292,12 +292,12 @@ function searchByTraits(people) {
      }
      if (userSearchChoice === "no" && filteredPeople.length === 1) {
         displayPeople(filteredPeople);
-        alert("\n\n We'll send you back to the start now to search any of these people by name.");
+        alert("We'll send you back to the start now to search any of these people by name.");
         app(people);
      }
      if (userSearchChoice === "no" && filteredPeople.length > 1) {
         displayPeople(filteredPeople);
-        alert("\n\n We'll send you back to the start now to search any of these people by name.");
+        alert("We'll send you back to the start now to search any of these people by name.");
         app(people);
      }
 }
