@@ -233,7 +233,7 @@ function findPersonFamily (person, people) {
     
 }
 
-function findPersonDescendants(person) {
+function findPersonDescendants(person, people) {
     // let personDescendants = `Descendants: ${person.descendants}\n`;
     // alert(personDescendants);
     let personId = person.id;
@@ -246,7 +246,7 @@ function findPersonDescendants(person) {
     if(personDescendants[0] === undefined) {
         personDescendantsFullNames = `${person.firstName} ${person.lastName} does not have any descendants.`
     } else {
-        for (let i = 0; i < personDescendantsInfo.length; i++) {
+        for (let i = 0; i < personDescendants.length; i++) {
         personDescendantsFullNames += `${person.firstName} ${person.lastName} ${i+1} descendant: ${personDescendants[i].firstName} ${personDescendants[i].lastName} \n`
         }
     }
@@ -256,7 +256,6 @@ function findPersonDescendants(person) {
 function searchByTraits(people) {
     let userSearchChoice = prompt("What would you like to search by? 'height', 'weight', 'eye color', 'gender', 'dob', 'occupation'.").toLowerCase();
     let filteredPeople;
-    let foundPerson;
     switch(userSearchChoice) {
         case "height":
           filteredPeople = searchByHeight(people);
@@ -292,11 +291,13 @@ function searchByTraits(people) {
        searchByTraits(filteredPeople, people);
      }
      if (userSearchChoice === "no" && filteredPeople.length === 1) {
-        foundPerson = filteredPeople[0];
-       mainMenu(foundPerson, people);
+        displayPeople(filteredPeople);
+        alert("\n\n We'll send you back to the start now to search any of these people by name.");
+        app(people);
      }
      if (userSearchChoice === "no" && filteredPeople.length > 1) {
-        alert(displayPeople(filteredPeople) + "\n\n We'll send you back to the start now to search any of these people by name.");
+        displayPeople(filteredPeople);
+        alert("\n\n We'll send you back to the start now to search any of these people by name.");
         app(people);
      }
 }
