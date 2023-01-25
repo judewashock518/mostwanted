@@ -153,6 +153,22 @@ function displayPerson(person) {
 }
 // End of displayPerson()
 
+function findPersonSpouse(person, people) {
+  const personSpouseId = person.currentSpouse;
+  let personSpouseFullName = "";
+  if (person.currentSpouse === null || person.currentSpouse === undefined) {
+      personSpouseFullName = `${person.firstName} ${person.lastName} does have a spouse`;
+  } else {
+      const personSpouseInfo = people.filter(function(person) {
+          if(person.id === personSpouseId) {
+              return true;
+          }
+      })
+      personSpouseFullName = `${person.firstName} ${person.lastName} current spouse: ${personSpouseInfo[0].firstName} ${personSpouseInfo[0].lastName}`
+  }
+  return personSpouseFullName;
+}
+
 function findPersonFamily (person, people) {
     // let personFamily = `Parents: ${person.parents}\n`;
     // personFamily += `Siblings: ${person.siblings}\n`;
