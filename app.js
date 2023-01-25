@@ -301,35 +301,55 @@ function searchByGender(people){
 }
 
 function searchByDob(people){
-    let userInputDob = prompt("What is the person's dob?");
-    let newArray = people.filter(function (el) {
-      if(el.dob == userInputDob) {
-        return true;
-      }
-      if (el.dob != userInputDob) {
-        alert("The dob you entered could not be found.");
-        // Restarts app() from the very beginning
-        return app(people);
-      }
-    });
+    // let userInputDob = prompt("What is the person's dob?");
+    // let newArray = people.filter(function (el) {
+    //   if(el.dob == userInputDob) {
+    //     return true;
+    //   }
+    //   if (el.dob != userInputDob) {
+    //     alert("The dob you entered could not be found.");
+    //     // Restarts app() from the very beginning
+    //     return app(people);
+    //   }
+    // });
   
-    return newArray;
+    // return newArray;
+    let userSearchChoice = prompt("What is the person's date of birth?");
+    let foundPerson = people.filter(function(el){
+    if(el.dob === userSearchChoice){
+    return true;
+    }});
+    if(foundPerson === undefined || foundPerson.length === 0){
+        alert("No results found.")
+        return app(people);
+    }
+    return foundPerson;
 }
 
 function searchByOccupation(people){
-    let userInputOccupation = prompt("What is the person's occupation?").toLowerCase();
-    let newArray = people.filter(function (el) {
-      if(el.occupation == userInputOccupation) {
-        return true;
-      }
-      if (el.occupation != userInputOccupation) {
-        alert("The occupation you entered could not be found.");
-        // Restarts app() from the very beginning
-        return app(people);
-      }
-    });
+    // let userInputOccupation = prompt("What is the person's occupation?").toLowerCase();
+    // let newArray = people.filter(function (el) {
+    //   if(el.occupation == userInputOccupation) {
+    //     return true;
+    //   }
+    //   if (el.occupation != userInputOccupation) {
+    //     alert("The occupation you entered could not be found.");
+    //     // Restarts app() from the very beginning
+    //     return app(people);
+    //   }
+    // });
   
-    return newArray;
+    // return newArray;
+    let userSearchChoice = prompt("What is the the person's occupation?");
+    let foundPerson = people.filter(function(el){
+    if(el.occupation === userSearchChoice){
+    return true;
+    }});
+    if(foundPerson === undefined || foundPerson.length === 0){
+        alert("No results found.")
+        return app(people);
+    }
+    return foundPerson;
 }
 
 
