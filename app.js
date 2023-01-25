@@ -153,12 +153,17 @@ function displayPerson(person) {
 }
 // End of displayPerson()
 
-function findPersonFamily (person) {
-    let personFamily = `Parents: ${person.parents}\n`;
-    personFamily += `Siblings: ${person.siblings}\n`;
-    personFamily += `Descendants: ${person.descendants}\n`;
-    personFamily += `Current Spouse: ${person.currentSpouse}\n`;
-    alert(personFamily);
+function findPersonFamily (person, people) {
+    // let personFamily = `Parents: ${person.parents}\n`;
+    // personFamily += `Siblings: ${person.siblings}\n`;
+    // personFamily += `Descendants: ${person.descendants}\n`;
+    // personFamily += `Current Spouse: ${person.currentSpouse}\n`;
+    // alert(personFamily);
+    const personSpouse = findPersonSpouse(person,people);
+    const personParent = findPersonParents(person,people);
+    const personSibling = findPersonSiblings(person,people);
+    const personFamily = personSpouse + "\n" + personParent + "\n" + personSibling;
+    return personFamily
     
 }
 
