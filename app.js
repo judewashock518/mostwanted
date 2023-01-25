@@ -237,17 +237,17 @@ function findPersonDescendants(person) {
     // let personDescendants = `Descendants: ${person.descendants}\n`;
     // alert(personDescendants);
     let personId = person.id;
-    let personDescendantsFullNames = ""
-    let personDescendant = people.filter(function(person) {
+    let personDescendantsFullNames = "";
+    let personDescendants = people.filter(function(person) {
         if(person.parents.includes(personId)) {
             return true;
         }
     })
-    if(personDescendant[0] === undefined) {
+    if(personDescendants[0] === undefined) {
         personDescendantsFullNames = `${person.firstName} ${person.lastName} does not have any descendants.`
     } else {
-        for (let i = o; i < personDescendant.length; i++) {
-            personDescendantsFullNames += `${person.firstName} ${person.lastName} ${i+1} descendant: ${personDescendant[i].firstName} ${personDescendant[i].lastName} \n`
+        for (let i = 0; i < personDescendantsInfo.length; i++) {
+        personDescendantsFullNames += `${person.firstName} ${person.lastName} ${i+1} descendant: ${personDescendants[i].firstName} ${personDescendants[i].lastName} \n`
         }
     }
     return personDescendantsFullNames;
