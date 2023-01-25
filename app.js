@@ -217,35 +217,55 @@ function searchByTraits(people) {
 
 
 function searchByHeight(people){
-    let userInputHeight = prompt("What is the person's height?");
-    let newArray = people.filter(function (el) {
-      if(el.height == userInputHeight) {
-        return true;
-      }
-      if (el.height != userInputHeight) {
-        alert("The height you entered could not be found.");
-        // Restarts app() from the very beginning
-        return app(people);
-      }
-    });
+    // let userInputHeight = prompt("What is the person's height?");
+    // let newArray = people.filter(function (el) {
+    //   if(el.height == userInputHeight) {
+    //     return true;
+    //   }
+    //   if (el.height != userInputHeight) {
+    //     alert("The height you entered could not be found.");
+    //     // Restarts app() from the very beginning
+    //     return app(people);
+    //   }
+    // });
 
-    return newArray;
+    // return newArray;
+    let userSearchChoice = prompt("What is the height of the person you are searching for?");
+    let foundPerson = people.filter(function(el){
+    if(el.height === userSearchChoice){
+    return true;
+    }});
+    if(foundPerson === undefined || foundPerson.length === 0){
+        alert("No results found.")
+        return app(people);
+    }
+    return foundPerson;
 }
 
 function searchByWeight(people) {
-    let userInputWeight = prompt("How much does the person weigh?");
-    let newArray = people.filter(function (el) {
-      if(el.weight == userInputWeight) {
-        return true;
-      }
-      if (el.weight != userInputWeight) {
-        alert("The weight you entered could not be found.");
-        // Restarts app() from the very beginning
-        return app(people);
-      }
-    });
+    // let userInputWeight = prompt("How much does the person weigh?");
+    // let newArray = people.filter(function (el) {
+    //   if(el.weight == userInputWeight) {
+    //     return true;
+    //   }
+    //   if (el.weight != userInputWeight) {
+    //     alert("The weight you entered could not be found.");
+    //     // Restarts app() from the very beginning
+    //     return app(people);
+    //   }
+    // });
   
-    return newArray;
+    // return newArray;
+    let userSearchChoice = prompt("What is the weight of the person you are searching for?");
+    let foundPerson = people.filter(function(el){
+    if(el.weight === userSearchChoice){
+    return true;
+    }});
+    if(foundPerson === undefined || foundPerson.length === 0){
+        alert("No results found.")
+        return app(people);
+    }
+    return foundPerson;
 }
 
 function searchByEyeColor(people){
@@ -287,7 +307,7 @@ function searchByGender(people){
     //   }
     // });
     // return newArray;
-    let userSearchChoice = prompt("What is the gender of the person you are looking for?");
+    let userSearchChoice = prompt("What is the gender of the person you are searching for?");
     let foundPerson = people.filter(function(el){
     if(el.gender === userSearchChoice){
     return true;
