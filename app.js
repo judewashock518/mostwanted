@@ -249,34 +249,55 @@ function searchByWeight(people) {
 }
 
 function searchByEyeColor(people){
-    let userInputEyeColor = prompt("What is the person's eye color?");
-    let newArray = people.filter(function (el) {
-      if(el.eyeColor == userInputEyeColor) {
-        return true;
-      }
-      if (el.eyeColor != userInputEyeColor) {
-        alert("The eye color you entered could not be found.");
-        // Restarts app() from the very beginning
-        return app(people);
-      }
+    // let userInputEyeColor = prompt("What is the person's eye color?");
+    // let newArray = people.filter(function (el) {
+    //   if(el.eyeColor == userInputEyeColor) {
+    //     return true;
+    //   }
+    //   if (el.eyeColor != userInputEyeColor) {
+    //     alert("The eye color you entered could not be found.");
+    //     // Restarts app() from the very beginning
+    //     return app(people);
+    //   }
 
-    });
-    return newArray;
+    // });
+    // return newArray;
+    let userSearchChoice = prompt("What is the person's eye color?");
+    let foundPerson = people.filter(function(el){
+    if(el.eyeColor === userSearchChoice){
+    return true;
+    }});
+    if(foundPerson === undefined || foundPerson.length === 0){
+        alert("No results found.")
+        return app(people);
+    }
+    return foundPerson;
 }
 
 function searchByGender(people){
-    let userInputGender = prompt("What is the person's gender?");
-    let newArray = people.filter(function (el) {
-      if(el.gender == userInputGender) {
-        return true;
-      }
-      if (el.gender != userInputGender) {
-        alert("The gender you entered could not be found.");
-        // Restarts app() from the very beginning
+    // let userInputGender = prompt("What is the person's gender?");
+    // let newArray = people.filter(function (el) {
+    //   if(el.gender == userInputGender) {
+    //     return true;
+    //   }
+    //   if (el.gender != userInputGender) {
+    //     alert("The gender you entered could not be found.");
+    //     // Restarts app() from the very beginning
+    //     return app(people);
+    //   }
+    // });
+    // return newArray;
+    let userSearchChoice = prompt("What is the gender of the person you are looking for?");
+    let foundPerson = people.filter(function(el){
+    if(el.gender === userSearchChoice){
+    return true;
+    }});
+    if(foundPerson === undefined || foundPerson.length === 0){
+        alert("No results found.")
         return app(people);
-      }
-    });
-    return newArray;
+    }
+    return foundPerson;
+
 }
 
 function searchByDob(people){
