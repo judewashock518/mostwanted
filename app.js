@@ -192,6 +192,33 @@ function findPersonParents(person, people) {
   return personParentsFullNames;
 }
 
+function findPersonSiblings(person, people) {
+  const personParents = person.parents;
+  const personId = person.id; 
+  let personSiblingsInfo = [];
+  let personSiblingsFullNames = "";
+  if (personParents[0] === undefined) {
+      personSiblingsFullNames = `${person.firstName} ${person.lastName} does not have any siblings.`
+  } else {
+      for (let i = 0; i < personParents.length; i++) {
+          let peopleWithSameParents = people.filter(function(person) {
+              if(person.parents[i] === personParents[i] && person.id !== personId) {
+                  return true;
+              }
+          })
+          personSiblingsInfo = [...peopleWithSameParents];
+      }
+  }
+  if(personSiblingsInfo[0] === undefined) {
+      personSiblingsFullNames = `${person.firstName} ${person.lastName} does not have any siblings.`
+  } else {
+      for (let i = 0; i < personSiblingsInfo.length; i++) {
+      personSiblingsFullNames += `${person.firstName} ${person.lastName} sibling ${i+1} is ${personSiblingsInfo[i].firstName} ${personSiblingsInfo[i].lastName} \n`
+      }
+  }
+  return personSiblingsFullNames;
+}
+
 function findPersonFamily (person, people) {
     // let personFamily = `Parents: ${person.parents}\n`;
     // personFamily += `Siblings: ${person.siblings}\n`;
