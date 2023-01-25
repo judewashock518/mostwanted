@@ -157,7 +157,7 @@ function findPersonSpouse(person, people) {
   const personSpouseId = person.currentSpouse;
   let personSpouseFullName = "";
   if (person.currentSpouse === null || person.currentSpouse === undefined) {
-      personSpouseFullName = `${person.firstName} ${person.lastName} does have a spouse`;
+      personSpouseFullName = `${person.firstName} ${person.lastName} does not have a spouse`;
   } else {
       const personSpouseInfo = people.filter(function(person) {
           if(person.id === personSpouseId) {
@@ -167,6 +167,29 @@ function findPersonSpouse(person, people) {
       personSpouseFullName = `${person.firstName} ${person.lastName} current spouse: ${personSpouseInfo[0].firstName} ${personSpouseInfo[0].lastName}`
   }
   return personSpouseFullName;
+}
+
+function findPersonParents(person, people) {
+  const personParentsIds = person.parents;
+  let personParentsFullNames = "";
+  let personParentsInfo = [];
+
+  if(personParentsIds[0] === undefined) {
+      personParentsFullNames = "\n No record of parent information"
+  } else {
+      for (let i = 0; i < personParentsIds.length; i++) {
+          let personParent = people.filter(function(person) {
+              if(person.id === personParentsIds[i]) {
+                  return true;
+              }
+          })
+          personParentsInfo = [...personParentsInfo, ...personParent];
+      }
+      for (let i = 0; i < personParentsInfo.length; i++) {
+          personParentsFullNames += `${person.firstName} ${person.lastName} parent ${i+1} full name: ${personParentsInfo[i].firstName} ${personParentsInfo[i].lastName} \n`
+      }
+  }
+  return personParentsFullNames;
 }
 
 function findPersonFamily (person, people) {
@@ -179,7 +202,7 @@ function findPersonFamily (person, people) {
     const personParent = findPersonParents(person,people);
     const personSibling = findPersonSiblings(person,people);
     const personFamily = personSpouse + "\n" + personParent + "\n" + personSibling;
-    return personFamily
+    return personFamily;
     
 }
 
